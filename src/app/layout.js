@@ -23,6 +23,9 @@ export async function generateMetadata() {
     robots: "index, follow",
     icons: {
       icon: faviconUrl
+    },
+    verification: {
+      google: 'az-auINiEX7dSWJ8OXbk_lFvQZcoHLNSA8T4VLve2hE',
     }
   };
 }
