@@ -10,13 +10,14 @@
     "postinstall": "prisma generate"
   },
   "dependencies": {
-    "next": "16.2.6",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "prisma": "^5.14.0",
     "@prisma/client": "^5.14.0",
+    "@vercel/blob": "^2.6.1",
+    "geolib": "^3.3.3",
     "lucide-react": "^0.379.0",
-    "geolib": "^3.3.3"
+    "next": "16.2.6",
+    "prisma": "^5.14.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
     "eslint": "^9",
