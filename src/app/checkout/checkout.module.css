@@ -1,0 +1,100 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background);
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+}
+
+.checkoutBox {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--foreground);
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.inputRow {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.helpText {
+  font-size: 0.875rem;
+  color: var(--secondary);
+  margin-top: 0.5rem;
+}
+
+.errorAlert {
+  padding: 1rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+}
+
+.resultBox {
+  padding: 1.25rem;
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  border: 1px solid transparent;
+}
+
+.success {
+  background-color: rgba(34, 197, 94, 0.1);
+  border-color: rgba(34, 197, 94, 0.2);
+  color: var(--success);
+}
+
+.danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.2);
+  color: var(--danger);
+}
+
+.resultMessage {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.distanceInfo {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.actions {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.placeOrderBtn {
+  width: 100%;
+  font-size: 1.125rem;
+}

@@ -1,0 +1,82 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Product {
+  id            String   @id @default(cuid())
+  name          String
+  description   String
+  imageUrl      String?
+  price         Float
+  stockQuantity Int      @default(0)
+  specifications String? // JSON string
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Settings {
+  id               String   @id @default(cuid())
+  deliveryRadiusKm Float    @default(50.0)
+  primaryColor     String   @default("#f97316")
+  bannerText       String   @default("Premium Ash Bricks for Professional Builders")
+  aboutUsText      String   @default("We manufacture high-quality, durable ash bricks.")
+  factoryLatitude  Float?
+  factoryLongitude Float?
+  factoryAddress   String?
+  contactPhone     String?
+  contactWhatsApp  String?
+  googleMapsApiKey String?
+  googleMapsLink   String?  // Google Maps share link e.g. https://maps.app.goo.gl/...
+  adminPasswordHash String?
+  logoUrl          String?
+  logoShape        String   @default("square") // square, circle, rounded
+  logoSize         Int      @default(52) // pixel size
+  heroStats        String?  // JSON array: [{value: "10+", label: "Years Experience"}]
+  heroBadgeText    String?
+  heroImageUrl     String?  // Custom hero background image URL
+  instagram        String?
+  facebook         String?
+  youtube          String?
+  twitter          String?
+  linkedin         String?
+  updatedAt        DateTime @updatedAt
+}
+
+model Media {
+  id          String   @id @default(cuid())
+  title       String?
+  url         String
+  type        String   @default("IMAGE") // IMAGE or VIDEO
+  isActive    Boolean  @default(true)
+  sortOrder   Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+model Order {
+  id           String   @id @default(cuid())
+  customerName String
+  phone        String
+  address      String
+  latitude     Float
+  longitude    Float
+  distance     Float
+  totalPrice   Float
+  status       String   @default("PENDING")
+  items        String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model AdminUser {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  uid       String   @unique  // Firebase UID
+  role      String   @default("SECONDARY") // PRIMARY or SECONDARY
+  status    String   @default("PENDING")   // PENDING, APPROVED, REJECTED
+  createdAt DateTime @default(now())
+}

@@ -1,0 +1,145 @@
+.adminWrapper {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background);
+}
+
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  flex-shrink: 0;
+}
+
+.sidebarHeader {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sidebarLogo {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: contain;
+  background: white;
+  padding: 3px;
+  flex-shrink: 0;
+}
+
+.sidebarTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+}
+
+.sidebarBrand {
+  font-size: 0.65rem;
+  color: #94a3b8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-top: 0.15rem;
+}
+
+.sidebarNav {
+  padding: 1.25rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex-grow: 1;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius);
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: all 0.15s;
+  text-decoration: none;
+}
+
+.navLink:hover {
+  background-color: rgba(249, 115, 22, 0.12);
+  color: #fb923c;
+}
+
+.sidebarFooter {
+  padding: 1rem 0.75rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.mainContent {
+  flex-grow: 1;
+  padding: 2rem;
+  overflow-y: auto;
+  background-color: var(--background);
+}
+
+.contentContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Shared page styles */
+.pageHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.pageTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--foreground);
+}
+
+.card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--foreground);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.fullWidth {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    display: none;
+  }
+}

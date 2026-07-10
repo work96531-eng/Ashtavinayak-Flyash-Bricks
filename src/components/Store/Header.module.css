@@ -1,0 +1,132 @@
+.header {
+  background-color: #ffffff;
+  border-bottom: 3px solid var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  text-decoration: none;
+}
+
+.logoImgWrapper {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logoTextGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoText {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--foreground);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.logoTagline {
+  font-size: 0.65rem;
+  color: var(--secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--foreground);
+  transition: color 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.2s;
+}
+
+.navLink:hover {
+  color: var(--primary);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.mobileMenuBtn {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--foreground);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    border-bottom: 3px solid var(--primary);
+  }
+
+  .nav.open {
+    display: flex;
+  }
+
+  .mobileMenuBtn {
+    display: block;
+  }
+
+  .logoText {
+    font-size: 0.8rem;
+  }
+
+  .logoTagline {
+    font-size: 0.6rem;
+  }
+}
