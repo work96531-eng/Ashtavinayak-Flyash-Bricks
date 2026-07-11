@@ -30,7 +30,7 @@ export async function generateMetadata() {
   };
 }
 
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/next';
 
 export default function RootLayout({ children }) {
   return (
